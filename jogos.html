@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogos - Code Programado</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="foto/logo.ico" type="image/x-icon">
+  <style>
+    :root{--bg-1:#0b1020;--bg-2:#12122b;--accent:#fe6544}
+    body{font-family:"Lato",sans-serif; background: linear-gradient(180deg,#071021 0%, #071022 100%); color:#e8f0ff; -webkit-font-smoothing:antialiased; padding:28px}
+    .w3-content{max-width:1200px;margin:0 auto}
+    .download-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:8px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.6); min-height:160px}
+    .download-card img{width:100%; height:100px; max-height:100px; object-fit:cover; display:block}
+    .category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+    .btn-modern{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff8b61);color:#fff;text-decoration:none;border:0;font-weight:600}
+    a.voltar{display:inline-block;margin-bottom:14px}
+    /* Category pills */
+    #downloads-categories-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;align-items:start;margin-top:8px}
+    #downloads-categories-list .category-pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);color:#e8f0ff;border:1px solid rgba(255,255,255,0.04);font-weight:600;text-align:center;cursor:pointer;transition:background .12s,transform .08s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    #downloads-categories-list .category-pill:hover{background:linear-gradient(90deg,rgba(254,101,68,0.08),rgba(77,208,225,0.04));transform:translateY(-2px)}
+    #downloads-categories-list .category-pill.active{background:linear-gradient(90deg,var(--accent),#ff8b61);color:#042037;box-shadow:0 8px 20px rgba(0,0,0,0.45)}
+    #downloads-categories-list .count{font-size:12px;opacity:.9;margin-left:6px;color:#dbeeff;font-weight:700}
+  </style>
+</head>
+<body>
+  <a class="w3-button w3-light-grey voltar" href="index.html">← Voltar</a>
+
+  <section class="downloads">
+    <div class="w3-content w3-padding">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Catálogo de Jogos</h3>
+      </div>
+
+      <div class="w3-row w3-margin-bottom downloads-layout">
+        <div class="w3-col m3 s12 downloads-nav">
+          <input id="downloads-search" class="w3-input w3-border" type="text" placeholder="Pesquisar jogos..." oninput="filterPrograms(this.value)">
+          <div id="downloads-categories-list" class="w3-margin-top"></div>
+        </div>
+        <div class="w3-col m9 s12">
+          <div id="downloads-loader" class="w3-center">Carregando jogos...</div>
+          <div id="downloads-sections"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fallback JSON (cópia breve do data/programs.json) -->
+  <script id="programs-data" type="application/json">[
+  {"id":"w11","title":"Windows 11","description":"ISO do Windows 11","category":"Sistemas Operacionais","link":"https://www.mediafire.com/file/4mbyq4gb3xcwqqw/%24Windows+11.iso","image":"foto/backup-windows-11.jpg"},
+  {"id":"game_exemplo","title":"SuperGame (Exemplo)","description":"Exemplo de jogo para demonstração.","category":"Jogos","link":"https://example.com/downloads/supergame.zip","image":"foto/vegas.png"}
+  ]</script>
+
+  <script>
+  /* Funções mínimas para renderizar o catálogo (adaptadas para 'Jogos') */
+  let programsCache = null;
+
+  function showLoader(show) { var l = document.getElementById('downloads-loader'); if (l) l.style.display = show ? 'block' : 'none'; }
+  function slugify(text){ return text.toString().toLowerCase().replace(/\s+/g,'-').replace(/[^\w\-]+/g,'').replace(/\-\-+/g,'-').replace(/^-+|-+$/g,''); }
+  function createCardHtml(p){
+    return '<div class="w3-card download-card" style="width:100%;">'
+      + (p.image ? ('<div style="position:relative"><img src="'+p.image+'" alt="'+p.title+'"><div class="category-badge">'+(p.category||'')+'</div></div>') : '')
+      + '<div class="w3-container"><h3>'+p.title+'</h3><p class="w3-text-grey">'+(p.description || '')+'</p>'
+      + '<p><a href="'+p.link+'" target="'+(p.target || '_blank')+'" class="btn-modern w3-block"><i class="fa fa-download"></i> Baixar</a></p>'
+      + '</div></div>';
+  }
+
+  function renderCategorySections(list){
+    const container = document.getElementById('downloads-sections');
+    if (!container) return;
+    container.innerHTML = '';
+    if (!list || list.length === 0) { container.innerHTML = '<p class="w3-text-grey">Nenhum jogo encontrado.</p>'; return; }
+    const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
+    cats.forEach(function(cat){
+      const items = list.filter(p => (p.category || 'Outros') === cat);
+      if (!items.length) return;
+      const section = document.createElement('div');
+      section.className = 'category-section';
+      section.id = 'cat-'+slugify(cat);
+      section.innerHTML = '<h4>'+cat+'</h4><div class="category-grid"></div>';
+      const grid = section.querySelector('.category-grid');
+      items.forEach(function(p){
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = createCardHtml(p);
+        grid.appendChild(wrapper);
+      });
+      container.appendChild(section);
+    });
+    showLoader(false);
+  }
+
+  function renderCategories(list){
+    const container = document.getElementById('downloads-categories-list');
+    if (!container) return;
+    const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
+    container.innerHTML = '';
+    const allBtn = document.createElement('button');
+    allBtn.className = 'category-pill';
+    allBtn.innerHTML = 'Todos <span class="count">('+ (list ? list.length : 0) +')</span>';
+    allBtn.dataset.cat = '';
+    allBtn.onclick = function(){ renderCategorySections(programsCache.filter(p => (p.category || 'Outros') === 'Jogos')); };
+    container.appendChild(allBtn);
+    cats.forEach(function(cat){
+      const cnt = (list || []).filter(p => (p.category || 'Outros') === cat).length;
+      const btn = document.createElement('button');
+      btn.className = 'category-pill';
+      btn.innerHTML = cat + ' <span class="count">('+cnt+')</span>';
+      btn.dataset.cat = cat;
+      btn.onclick = function(){ const filtered = programsCache.filter(p => (p.category || 'Outros') === cat); renderCategorySections(filtered); };
+      container.appendChild(btn);
+    });
+  }
+
+  function filterPrograms(q){
+    if (!programsCache) return;
+    q = (q || '').trim().toLowerCase();
+    if (!q) renderCategorySections(programsCache.filter(p => (p.category || 'Outros') === 'Jogos'));
+    else {
+      const filtered = programsCache.filter(p => (p.title + ' ' + (p.description||'') + ' ' + (p.category||'')).toLowerCase().indexOf(q) !== -1);
+      renderCategorySections(filtered.filter(p => (p.category || 'Outros') === 'Jogos'));
+    }
+  }
+
+  function loadPrograms(){
+    if (programsCache) { renderCategories(programsCache); renderCategorySections(programsCache.filter(p => (p.category || 'Outros') === 'Jogos')); return; }
+    showLoader(true);
+    fetch('data/programs.json').then(function(res){ if(!res.ok) throw new Error('Network response not ok'); return res.json(); }).then(function(data){ programsCache = data; renderCategories(data); renderCategorySections(data.filter(p => (p.category || 'Outros') === 'Jogos')); showLoader(false); }).catch(function(err){
+      const s = document.getElementById('programs-data');
+      if (s && s.textContent.trim()){
+        try{ const data = JSON.parse(s.textContent); programsCache = data; renderCategories(data); renderCategorySections(data.filter(p => (p.category || 'Outros') === 'Jogos')); showLoader(false); return; }catch(e){}
+      }
+      showLoader(false);
+      document.getElementById('downloads-sections').innerHTML = '<p class="w3-text-red">Não foi possível carregar a lista de jogos. Tente novamente.</p>';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ loadPrograms(); });
+  </script>
+  <script>
+  (function(){
+    const preview = document.createElement('div');
+    const pimg = document.createElement('img');
+    preview.style.position = 'fixed';
+    preview.style.display = 'none';
+    preview.style.pointerEvents = 'none';
+    preview.style.zIndex = 99999;
+    preview.style.maxWidth = '480px';
+    preview.style.maxHeight = '60vh';
+    preview.style.boxShadow = '0 12px 40px rgba(0,0,0,0.6)';
+    preview.style.borderRadius = '8px';
+    preview.style.overflow = 'hidden';
+    preview.style.background = '#000';
+    preview.style.transition = 'opacity .12s ease';
+    preview.style.opacity = '0';
+    pimg.style.display = 'block';
+    pimg.style.width = '100%';
+    pimg.style.height = 'auto';
+    preview.appendChild(pimg);
+    document.body.appendChild(preview);
+
+    let hideTimeout = null;
+
+    function positionPreview(e){
+      const rect = preview.getBoundingClientRect();
+      let x = e.clientX + 18;
+      let y = e.clientY + 18;
+      const vw = window.innerWidth, vh = window.innerHeight;
+      if (x + rect.width > vw) x = e.clientX - rect.width - 18;
+      if (y + rect.height > vh) y = e.clientY - rect.height - 18;
+      if (x < 6) x = 6; if (y < 6) y = 6;
+      preview.style.left = x + 'px';
+      preview.style.top = y + 'px';
+    }
+
+    function showPreview(btn, e){
+      const card = btn.closest('.download-card') || btn.closest('.w3-card');
+      const imgEl = card ? card.querySelector('img') : null;
+      if (!imgEl || !imgEl.src) return;
+      pimg.src = imgEl.src;
+      preview.style.display = 'block';
+      requestAnimationFrame(()=> preview.style.opacity = '1');
+      positionPreview(e);
+    }
+
+    function hidePreview(){
+      preview.style.opacity = '0';
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(()=> preview.style.display = 'none', 160);
+    }
+
+    document.addEventListener('mouseover', function(ev){
+      const btn = ev.target.closest && ev.target.closest('.btn-modern');
+      if (!btn) return;
+      showPreview(btn, ev);
+      function onMove(e){ positionPreview(e); }
+      function onLeave(){ hidePreview(); btn.removeEventListener('mousemove', onMove); btn.removeEventListener('mouseleave', onLeave); }
+      btn.addEventListener('mousemove', onMove);
+      btn.addEventListener('mouseleave', onLeave);
+    });
+  })();
+  </script>
+</body>
+</html>

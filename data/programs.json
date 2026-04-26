@@ -168,11 +168,44 @@
     "image": "foto/EPSON.png"
   },
   {
+    "id": "reset_L100",
+    "title": "Reset Epson L100",
+    "description": "Ferramenta de reset para Epson L100",
+    "category": "Resets",
+    "link": "https://www.mediafire.com/file/zgi3z40tc7i8npz/Epson-L100.zip/file",
+    "image": "foto/EPSON.png"
+  },
+  {
+    "id": "reset_L101",
+    "title": "Reset Epson L101",
+    "description": "Ferramenta de reset para Epson L101",
+    "category": "Resets",
+    "link": "https://www.mediafire.com/file/h0a2jmvwedi747x/Epson-L101.zip/file",
+    "image": "foto/epson l1000.png"
+  },
+  {
+    "id": "RESETE",
+    "title": "RESET ",
+    "description": "Ferramenta para resetar qualquer impressora Epson",
+    "category": "Resets",
+    "link": "https://www.mediafire.com/file/h9isg6071n48zzj/wicreset.zip/file",
+    "image": "foto/impressora driver.jpg"
+  },
+  {
     "id": "anydesk",
     "title": "AnyDesk",
     "description": "Suporte remoto - download AnyDesk",
     "category": "Suporte",
     "link": "https://anydesk.com/pt/downloads/thank-you?dv=win_exe",
     "image": "foto/anydesk-logo_brandlogos.net_91sb7.png"
+  }
+  ,
+  {
+    "id": "game_exemplo",
+    "title": "SuperGame (Exemplo)",
+    "description": "Exemplo de jogo para demonstração.",
+    "category": "Jogos",
+    "link": "https://example.com/downloads/supergame.zip",
+    "image": "foto/vegas.png"
   }
 ]

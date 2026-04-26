@@ -1,149 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>code programado</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="foto/logo.ico" type="image/x-icon">
-<style>
-:root{--bg-1:#0b1020;--bg-2:#212163;--accent:#fe6544}
-body{font-family:"Lato",sans-serif; background: linear-gradient(180deg,#071021 0%, #071022 100%); color:#e8f0ff; -webkit-font-smoothing:antialiased}
-.w3-bar,h1,button{font-family:"Montserrat",sans-serif}
-.fa-anchor,.fa-coffee{font-size:200px}
+  <title>code programado</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="foto/logo.ico" type="image/x-icon">
+  <style>
+    :root {
+      --bg-1: #0b1020;
+      --bg-2: #212163;
+      --accent: #fe6544
+    }
 
-/* Topbar e Hero */
-.topbar{background:linear-gradient(90deg,var(--bg-2),#352c78); box-shadow:0 6px 20px rgba(8,10,30,0.6)}
-.topbar .w3-bar-item{color:#fff}
-.hero{padding:80px 16px; background:linear-gradient(135deg,#131530 0%, #191a3d 60%); position:relative; overflow:hidden}
-.hero h1{color:var(--accent); font-weight:800; letter-spacing:2px}
-.hero h2{color:#e6f0ff}
+    body {
+      font-family: "Lato", sans-serif;
+      background: linear-gradient(180deg, #071021 0%, #071022 100%);
+      color: #e8f0ff;
+      -webkit-font-smoothing: antialiased
+    }
 
- 
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px
+    }
+
+    /* Topbar e Hero */
+    .topbar {
+      background: linear-gradient(90deg, var(--bg-2), #352c78);
+      box-shadow: 0 6px 20px rgba(8, 10, 30, 0.6)
+    }
+
+    .topbar .w3-bar-item {
+      color: #fff
+    }
+
+    .hero {
+      padding: 80px 16px;
+      background: linear-gradient(135deg, #131530 0%, #191a3d 60%);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero h1 {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 2px
+    }
+
+    .hero h2 {
+      color: #e6f0ff
+    }
 
 
-  :root{--bg-1:#0b1020;--bg-2:#12122b;--accent:#fe6544}
-body{font-family:"Lato",sans-serif; background:linear-gradient(180deg,#060814 0%, #081028 100%); color:#e8f0ff; -webkit-font-smoothing:antialiased}
-.w3-bar,h1,button{font-family:"Montserrat",sans-serif}
-.fa-anchor,.fa-coffee{font-size:200px}
 
-/* Hero */
-.hero{padding:80px 16px; background:linear-gradient(135deg,#0f1530 0%, #121430 60%); position:relative; overflow:hidden}
-.hero h1{color:var(--accent); font-weight:800; letter-spacing:2px}
-.hero h2{color:#e6f0ff}
 
-/* Catálogo */
-.downloads .w3-input{background:rgba(255,255,255,0.03); color:#fff; border:1px solid rgba(255,255,255,0.06)}
-.category-btn{margin:6px 0; display:block}
-.download-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:8px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.6); min-height:160px}
-.download-card img{width:100%; height:100px; max-height:100px; object-fit:cover; display:block}
-.download-card .w3-container{padding:10px}
+    :root {
+      --bg-1: #0b1020;
+      --bg-2: #12122b;
+      --accent: #fe6544
+    }
 
-/* Botões modernos e barra lateral */
-.btn-modern{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff8b61);color:#fff;text-decoration:none;border:0;font-weight:600;box-shadow:0 8px 24px rgba(254,101,68,0.12)}
-.btn-modern .fa{margin-right:6px}
-.btn-cta{background:linear-gradient(90deg,#00b3ff,#4dd0e1);color:#042037;border-radius:12px;padding:12px 16px;font-weight:700;box-shadow:0 10px 30px rgba(0,179,255,0.08)}
-.action-bar{position:fixed;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9999}
-.action-bar .action-btn{width:52px;height:52px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.03);color:#fff;border:1px solid rgba(255,255,255,0.04);cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.6);transition:transform .15s ease, background .15s ease;font-size:18px}
-.action-bar .action-btn:hover{transform:translateX(6px);background:linear-gradient(90deg,var(--bg-2),#352c78)}
-@media (max-width:900px){.action-bar{display:none}}
+    body {
+      font-family: "Lato", sans-serif;
+      background: linear-gradient(180deg, #060814 0%, #081028 100%);
+      color: #e8f0ff;
+      -webkit-font-smoothing: antialiased
+    }
 
-/* Hero decorativo e cartões modernos */
-.hero::before{content:"";position:absolute;right:-10%;top:-10%;width:60%;height:60%;background:radial-gradient(circle at 30% 30%, rgba(77,208,225,0.04), transparent 40%), radial-gradient(circle at 70% 70%, rgba(254,101,68,0.02), transparent 30%);transform:rotate(10deg);border-radius:50%;pointer-events:none;z-index:0}
-.hero h1,.hero h2,.hero a{position:relative;z-index:1}
-.download-card h3{margin-top:8px;color:#fff;font-size:16px}
-.download-card p.w3-text-grey{color:#bcd8ff; font-size:14px}
-.download-card .category-badge{position:absolute;left:12px;top:12px;display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(0,0,0,0.35);color:#fff;font-size:12px}
-.btn-modern.w3-block{display:inline-flex;justify-content:center}
-@media (max-width:900px){.action-bar{display:flex;bottom:12px;left:unset;top:unset;right:12px;flex-direction:row;border-radius:14px;padding:6px;background:transparent}}
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
 
-/* Layout do catálogo com navegação lateral */
-.downloads-layout{display:flex;gap:24px;align-items:flex-start}
-downloads-nav{position:sticky;top:90px}
-downloads-nav .w3-button{width:100%;text-align:left;margin-bottom:8px}
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px
+    }
 
-/* Category pills (grid of compact rounded buttons) */
-#downloads-categories-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;align-items:start;margin-top:8px}
-#downloads-categories-list .category-pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);color:#e8f0ff;border:1px solid rgba(255,255,255,0.04);font-weight:600;text-align:center;cursor:pointer;transition:background .12s,transform .08s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#downloads-categories-list .category-pill:hover{background:linear-gradient(90deg,rgba(254,101,68,0.08),rgba(77,208,225,0.04));transform:translateY(-2px)}
-#downloads-categories-list .category-pill.active{background:linear-gradient(90deg,var(--accent),#ff8b61);color:#042037;box-shadow:0 8px 20px rgba(0,0,0,0.45)}
-#downloads-categories-list .count{font-size:12px;opacity:.9;margin-left:6px;color:#dbeeff;font-weight:700}
-#downloads-categories-list button{min-height:38px}
-.category-section{padding:18px;margin-bottom:20px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border-radius:10px}
-.category-section h4{color:#fff;margin-bottom:12px}
-.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-.category-grid > div{display:flex}
+    /* Hero */
+    .hero {
+      padding: 80px 16px;
+      background: linear-gradient(135deg, #0f1530 0%, #121430 60%);
+      position: relative;
+      overflow: hidden
+    }
 
-/* Loader */
-#downloads-loader{display:none; padding:18px 0; color:#cfe9ff}
+    .hero h1 {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 2px
+    }
 
-@media (max-width:900px){.sumir{display:none}.hero{padding:48px 12px}}
+    .hero h2 {
+      color: #e6f0ff
+    }
 
-/* Single-screen hero and more visible buttons */
-html, body {height:100%; margin:0; padding:0; overflow:hidden}
-.single-screen {position:fixed; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; padding:24px; background:linear-gradient(180deg,var(--bg-1),#071022); z-index:9998}
-.single-screen .main-logo {max-width:140px; margin-bottom:16px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.6)}
-.single-screen h1{font-size:44px; margin:0 0 8px; color:#ffffff; letter-spacing:1px}
-.single-screen .tagline{font-size:18px; color:#dbeeff; margin:0 0 18px}
-.button-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-large{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:800;color:#042037;border:0;cursor:pointer;box-shadow:0 12px 30px rgba(2,6,23,0.6);text-decoration:none}
-.btn-large .fa{font-size:18px}
-.cta-green{background:linear-gradient(90deg,#00c853,#00e676); color:#042037}
-.cta-yellow{background:linear-gradient(90deg,#ffb300,#ffd54f); color:#042037}
-.cta-blue{background:linear-gradient(90deg,#29b6f6,#00b0ff); color:#042037}
-.action-bar .action-btn{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,#ff7a18,#ffcc00);color:#042037;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+    /* Catálogo */
+    .downloads .w3-input {
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.06)
+    }
 
-/* ensure small screens still show elements without scroll */
-@media (max-width:900px){ .single-screen h1{font-size:28px} .single-screen .tagline{font-size:15px} .action-bar{right:12px;left:auto;top:auto;bottom:12px} }
-</style>
+    .category-btn {
+      margin: 6px 0;
+      display: block
+    }
+
+    .download-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      min-height: 160px
+    }
+
+    .download-card img {
+      width: 100%;
+      height: 100px;
+      max-height: 100px;
+      object-fit: cover;
+      display: block
+    }
+
+    .download-card .w3-container {
+      padding: 10px
+    }
+
+    /* Botões modernos e barra lateral */
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--accent), #ff8b61);
+      color: #fff;
+      text-decoration: none;
+      border: 0;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(254, 101, 68, 0.12)
+    }
+
+    .btn-modern .fa {
+      margin-right: 6px
+    }
+
+    .btn-cta {
+      background: linear-gradient(90deg, #00b3ff, #4dd0e1);
+      color: #042037;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 179, 255, 0.08)
+    }
+
+    .action-bar {
+      position: fixed;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999
+    }
+
+    .action-bar .action-btn {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+      transition: transform .15s ease, background .15s ease;
+      font-size: 18px
+    }
+
+    .action-bar .action-btn:hover {
+      transform: translateX(6px);
+    }
+
+    @media (max-width:900px) {
+      .action-bar {
+        display: none
+      }
+    }
+
+    /* Hero decorativo e cartões modernos */
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -10%;
+      top: -10%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle at 30% 30%, rgba(77, 208, 225, 0.04), transparent 40%), radial-gradient(circle at 70% 70%, rgba(254, 101, 68, 0.02), transparent 30%);
+      transform: rotate(10deg);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .hero h1,
+    .hero h2,
+    .hero a {
+      position: relative;
+      z-index: 1
+    }
+
+    .download-card h3 {
+      margin-top: 8px;
+      color: #fff;
+      font-size: 16px
+    }
+
+    .download-card p.w3-text-grey {
+      color: #bcd8ff;
+      font-size: 14px
+    }
+
+    .download-card .category-badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      font-size: 12px
+    }
+
+    .btn-modern.w3-block {
+      display: inline-flex;
+      justify-content: center
+    }
+
+    @media (max-width:900px) {
+      .action-bar {
+        display: flex;
+        bottom: 12px;
+        left: unset;
+        top: unset;
+        right: 12px;
+        flex-direction: row;
+        border-radius: 14px;
+        padding: 6px;
+        background: transparent
+      }
+    }
+
+    /* Layout do catálogo com navegação lateral */
+    .downloads-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start
+    }
+
+    downloads-nav {
+      position: sticky;
+      top: 90px
+    }
+
+    downloads-nav .w3-button {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 8px
+    }
+
+    /* Category pills (grid of compact rounded buttons) */
+    #downloads-categories-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      align-items: start;
+      margin-top: 8px
+    }
+
+    #downloads-categories-list .category-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #e8f0ff;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background .12s, transform .08s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    #downloads-categories-list .category-pill:hover {
+      background: linear-gradient(90deg, rgba(254, 101, 68, 0.08), rgba(77, 208, 225, 0.04));
+      transform: translateY(-2px)
+    }
+
+    #downloads-categories-list .category-pill.active {
+      background: linear-gradient(90deg, var(--accent), #ff8b61);
+      color: #042037;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45)
+    }
+
+    #downloads-categories-list .count {
+      font-size: 12px;
+      opacity: .9;
+      margin-left: 6px;
+      color: #dbeeff;
+      font-weight: 700
+    }
+
+    #downloads-categories-list button {
+      min-height: 38px
+    }
+
+    .category-section {
+      padding: 18px;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+      border-radius: 10px
+    }
+
+    .category-section h4 {
+      color: #fff;
+      margin-bottom: 12px
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px
+    }
+
+    .category-grid>div {
+      display: flex
+    }
+
+    /* Loader */
+    #downloads-loader {
+      display: none;
+      padding: 18px 0;
+      color: #cfe9ff
+    }
+
+    @media (max-width:900px) {
+      .sumir {
+        display: none
+      }
+
+      .hero {
+        padding: 48px 12px
+      }
+    }
+
+    /* Single-screen hero and more visible buttons */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden
+    }
+
+    .single-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 24px;
+      background: linear-gradient(180deg, var(--bg-1), #071022);
+      z-index: 9998
+    }
+
+    .single-screen .main-logo {
+      max-width: 540px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+    }
+
+    .single-screen h1 {
+      font-size: 44px;
+      margin: 0 0 8px;
+      color: #ffffff;
+      letter-spacing: 1px
+    }
+
+    .single-screen .tagline {
+      font-size: 18px;
+      color: #dbeeff;
+      margin: 0 0 18px
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .btn-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      color: #042037;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6);
+      text-decoration: none
+    }
+
+    .btn-large .fa {
+      font-size: 18px
+    }
+
+    .cta-green {
+      background: linear-gradient(90deg, #00c853, #00e676);
+      color: #042037
+    }
+
+    .cta-yellow {
+      background: linear-gradient(90deg, #ffb300, #ffd54f);
+      color: #042037
+    }
+
+    .cta-blue {
+      background: linear-gradient(90deg, #29b6f6, #00b0ff);
+      color: #042037
+    }
+
+    .cta-purple {
+      background: linear-gradient(90deg,#8e24aa,#d81b60);
+      color: #ffffff
+    }
+
+    .action-bar .action-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff7a18, #ffcc00);
+      color: #042037;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6)
+    }
+
+    /* ensure small screens still show elements without scroll */
+    @media (max-width:900px) {
+      .single-screen h1 {
+        font-size: 28px
+      }
+
+      .single-screen .tagline {
+        font-size: 15px
+      }
+
+      .action-bar {
+        right: 12px;
+        left: auto;
+        top: auto;
+        bottom: 12px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<!-- Action sidebar -->
-<div class="action-bar" role="navigation" aria-label="Ações rápidas">
-  <a class="action-btn" title="Catálogo" href="catalogo.html"><i class="fa fa-download"></i></a>
-  <a class="action-btn" title="Serviços" href="servicos.html"><i class="fa fa-wrench"></i></a>
-  <a class="action-btn" title="Sistema Personalizado" href="sistema-personalizado.html"><i class="fa fa-code"></i></a>
-  <a class="action-btn" title="WhatsApp" href="https://api.whatsapp.com/send?phone=5579996362900&text=ol%C3%A1" target="_blank"><i class="fa fa-whatsapp"></i></a>
-</div>
+  <script>
+  (function(){
+    // preview element
+    const preview = document.createElement('div');
+    const pimg = document.createElement('img');
+    preview.style.position = 'fixed';
+    preview.style.display = 'none';
+    preview.style.pointerEvents = 'none';
+    preview.style.zIndex = 99999;
+    preview.style.maxWidth = '480px';
+    preview.style.maxHeight = '60vh';
+    preview.style.boxShadow = '0 12px 40px rgba(0,0,0,0.6)';
+    preview.style.borderRadius = '8px';
+    preview.style.overflow = 'hidden';
+    preview.style.background = '#000';
+    preview.style.transition = 'opacity .12s ease';
+    preview.style.opacity = '0';
+    pimg.style.display = 'block';
+    pimg.style.width = '100%';
+    pimg.style.height = 'auto';
+    preview.appendChild(pimg);
+    document.body.appendChild(preview);
 
-<!-- Single-screen hero (apresentação única sem scroll) -->
-<div class="single-screen" role="main" aria-label="Página inicial - Code Programado">
-  <img src="foto/code.png" alt="Code Programado" class="main-logo">
-  <h1>Code Programado</h1>
-  <p class="tagline">Assistência técnica de computadores, notebooks e impressoras</p>
+    let hideTimeout = null;
+
+    function positionPreview(e){
+      const rect = preview.getBoundingClientRect();
+      let x = e.clientX + 18;
+      let y = e.clientY + 18;
+      const vw = window.innerWidth, vh = window.innerHeight;
+      if (x + rect.width > vw) x = e.clientX - rect.width - 18;
+      if (y + rect.height > vh) y = e.clientY - rect.height - 18;
+      if (x < 6) x = 6; if (y < 6) y = 6;
+      preview.style.left = x + 'px';
+      preview.style.top = y + 'px';
+    }
+
+    function showPreview(btn, e){
+      const card = btn.closest('.download-card') || btn.closest('.w3-card');
+      const imgEl = card ? card.querySelector('img') : null;
+      if (!imgEl || !imgEl.src) return;
+      pimg.src = imgEl.src;
+      preview.style.display = 'block';
+      requestAnimationFrame(()=> preview.style.opacity = '1');
+      positionPreview(e);
+    }
+
+    function hidePreview(){
+      preview.style.opacity = '0';
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(()=> preview.style.display = 'none', 160);
+    }
+
+    document.addEventListener('mouseover', function(ev){
+      const btn = ev.target.closest && ev.target.closest('.btn-modern');
+      if (!btn) return;
+      showPreview(btn, ev);
+      function onMove(e){ positionPreview(e); }
+      function onLeave(){ hidePreview(); btn.removeEventListener('mousemove', onMove); btn.removeEventListener('mouseleave', onLeave); }
+      btn.addEventListener('mousemove', onMove);
+      btn.addEventListener('mouseleave', onLeave);
+    });
+  })();
+  </script>
+  <div class="action-bar" role="navigation" aria-label="Ações rápidas">
+    <a class="action-btn" title="Catálogo" href="catalogo.html"><i class="fa fa-download"></i></a>
+    <a class="action-btn" title="Serviços" href="servicos.html"><i class="fa fa-wrench"></i></a>
+    <a class="action-btn" title="Sistema Personalizado" href="sistema-personalizado.html"><i class="fa fa-code"></i></a>
+    <a class="action-btn" title="Jogos" href="jogos.html"><i class="fa fa-gamepad"></i></a>
+    <a class="action-btn" title="WhatsApp" href="https://api.whatsapp.com/send?phone=5579996362900&text=ol%C3%A1"
+      target="_blank"><i class="fa fa-whatsapp"></i></a>
+  </div>
+
+  <!-- Single-screen hero (apresentação única sem scroll) -->
+  <div class="single-screen" role="main" aria-label="Página inicial - Code Programado">
+    <img src="foto/code.png" alt="Code Programado" class="main-logo">
+    <h1>Code Programado</h1>
+    <p class="tagline">Assistência técnica de computadores, notebooks e impressoras</p>
     <div class="button-row" role="toolbar" aria-label="Ações principais">
-    <a class="btn-large cta-green" href="servicos.html"><i class="fa fa-wrench"></i> Serviços</a>
-    <a class="btn-large cta-yellow" href="catalogo.html"><i class="fa fa-download"></i> Catálogo</a>
-    <a class="btn-large cta-blue" href="sistema-personalizado.html"><i class="fa fa-code"></i> Sistema Personalizado</a>
-  </div>
-</div>
-
-<!-- Fallback JSON embutido (usado quando fetch falha, útil ao abrir via file://) -->
-<!-- Seção: Catálogo de Downloads (renderizada dinamicamente a partir de data/programs.json) -->
-<section class="downloads" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Catálogo de Downloads</h3>
-    </div>
-
-    <div class="w3-row w3-margin-bottom downloads-layout">
-      <div class="w3-col m3 s12 downloads-nav">
-        <input id="downloads-search" class="w3-input w3-border" type="text" placeholder="Pesquisar programas..." oninput="filterPrograms(this.value)">
-        <div id="downloads-categories-list" class="w3-margin-top"></div>
-      </div>
-      <div class="w3-col m9 s12">
-        <div id="downloads-loader" class="w3-center">Carregando programas...</div>
-        <div id="downloads-sections"></div>
-      </div>
+      <a class="btn-large cta-green" href="servicos.html"><i class="fa fa-wrench"></i> Serviços</a>
+      <a class="btn-large cta-yellow" href="catalogo.html"><i class="fa fa-download"></i> Catálogo</a>
+      <a class="btn-large cta-purple" href="jogos.html"><i class="fa fa-gamepad"></i> Jogos</a>
+      <a class="btn-large cta-blue" href="sistema-personalizado.html"><i class="fa fa-code"></i> Sistema
+        Personalizado</a>
     </div>
   </div>
-</section>
 
-<!-- Fallback JSON embutido (usado quando fetch falha, útil ao abrir via file://) -->
-<script id="programs-data" type="application/json">[
+  <!-- Fallback JSON embutido (usado quando fetch falha, útil ao abrir via file://) -->
+  <!-- Seção: Catálogo de Downloads (renderizada dinamicamente a partir de data/programs.json) -->
+  <section class="downloads" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Catálogo de Downloads</h3>
+      </div>
+
+      <div class="w3-row w3-margin-bottom downloads-layout">
+        <div class="w3-col m3 s12 downloads-nav">
+          <input id="downloads-search" class="w3-input w3-border" type="text" placeholder="Pesquisar programas..."
+            oninput="filterPrograms(this.value)">
+          <div id="downloads-categories-list" class="w3-margin-top"></div>
+        </div>
+        <div class="w3-col m9 s12">
+          <div id="downloads-loader" class="w3-center">Carregando programas...</div>
+          <div id="downloads-sections"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fallback JSON embutido (usado quando fetch falha, útil ao abrir via file://) -->
+  <script id="programs-data" type="application/json">[
   {
     "id": "w11",
     "title": "Windows 11",
@@ -322,488 +777,513 @@ html, body {height:100%; margin:0; padding:0; overflow:hidden}
   }
 ]</script>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Quem somos ?</h1>
-      <h5 class="w3-padding-16">Bem-vindo ao nosso site, onde oferecemos serviços especializados e de alta qualidade no conserto e manutenção de computadores, notebooks e outros equipamentos eletrônicos. Nossa missão é proporcionar soluções eficazes para todos os problemas tecnológicos que você possa enfrentar, garantindo sempre a sua satisfação e a melhor experiência possível.</h5>
+  <!-- First Grid -->
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Quem somos ?</h1>
+        <h5 class="w3-padding-16">Bem-vindo ao nosso site, onde oferecemos serviços especializados e de alta qualidade
+          no conserto e manutenção de computadores, notebooks e outros equipamentos eletrônicos. Nossa missão é
+          proporcionar soluções eficazes para todos os problemas tecnológicos que você possa enfrentar, garantindo
+          sempre a sua satisfação e a melhor experiência possível.</h5>
 
-    </div>
+      </div>
 
-    <div class="w3-third w3-center">
-      <i class="w3-padding-64 "> <img src="foto/code.png" width="100%" alt=""></i>
-    </div>
-  </div>
-</div>
-
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class=""> <img src="foto/experiencia.png" width="100%" alt=""></i>
-    </div>
-
-    <div class="w3-twothird">
-      <h1>Nossa Experiência</h1>
-      <h5 class="w3-padding-32">
-Com uma equipe de profissionais altamente qualificados e apaixonados por tecnologia, garantimos um serviço rápido e eficiente. Nossa experiência e conhecimento abrangem as principais marcas e modelos no mercado, permitindo-nos oferecer soluções personalizadas para cada cliente.</h5>
-
-      <p class="w3-text-grey">Compromisso com a Qualidade
-Acreditamos na entrega de um serviço de excelência e na construção de um relacionamento de confiança com nossos clientes. Utilizamos somente peças de reposição de qualidade e garantimos os serviços prestados, assegurando que seu equipamento funcione como novo após a manutenção.</p>
+      <div class="w3-third w3-center">
+        <i class="w3-padding-64 "> <img src="foto/code.png" width="100%" alt=""></i>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Ofertas de Serviço</h1>
-      <h5 class="w3-padding-16">
-        <p>
-          <b>Diagnóstico e Reparo:</b>
-           Realizamos diagnósticos precisos e reparamos componentes físicos e problemas de software para garantir que seu computador ou notebook volte a funcionar perfeitamente.
-        </p>
-        <p>
-          <b> Atualização de Hardware:</b>
-          Oferecemos serviços de atualização de hardware, como aumento de memória RAM, substituição de discos rígidos e upgrades de placas gráficas.
-        </p>
+  <!-- Second Grid -->
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <i class=""> <img src="foto/experiencia.png" width="100%" alt=""></i>
+      </div>
+
+      <div class="w3-twothird">
+        <h1>Nossa Experiência</h1>
+        <h5 class="w3-padding-32">
+          Com uma equipe de profissionais altamente qualificados e apaixonados por tecnologia, garantimos um serviço
+          rápido e eficiente. Nossa experiência e conhecimento abrangem as principais marcas e modelos no mercado,
+          permitindo-nos oferecer soluções personalizadas para cada cliente.</h5>
+
+        <p class="w3-text-grey">Compromisso com a Qualidade
+          Acreditamos na entrega de um serviço de excelência e na construção de um relacionamento de confiança com
+          nossos clientes. Utilizamos somente peças de reposição de qualidade e garantimos os serviços prestados,
+          assegurando que seu equipamento funcione como novo após a manutenção.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- First Grid -->
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Ofertas de Serviço</h1>
+        <h5 class="w3-padding-16">
+          <p>
+            <b>Diagnóstico e Reparo:</b>
+            Realizamos diagnósticos precisos e reparamos componentes físicos e problemas de software para garantir que
+            seu computador ou notebook volte a funcionar perfeitamente.
+          </p>
+          <p>
+            <b> Atualização de Hardware:</b>
+            Oferecemos serviços de atualização de hardware, como aumento de memória RAM, substituição de discos rígidos
+            e upgrades de placas gráficas.
+          </p>
           <p>
             <b>Reparos de Tela e Teclado:</b>
-            Cuidamos de problemas comuns, como telas quebradas e teclados defeituosos, com peças de reposição de alta qualidade.</h5>
-          </p>
+            Cuidamos de problemas comuns, como telas quebradas e teclados defeituosos, com peças de reposição de alta
+            qualidade.
+        </h5>
+        </p>
 
-    </div>
+      </div>
 
-    <div class="w3-third w3-center">
-      <i class="w3-padding-64 "> <img src="foto/servico.png" width="100%" alt=""></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class=""> <img src="foto/waht.png" width="100%" alt=""></i>
-    </div>
-
-    <div class="w3-twothird">
-  
-      <h5 class="w3-padding-32">
-Estamos aqui para ajudar! Ligue diretamente para nossa central de atendimento. Nossa equipe está pronta para responder a todas as suas perguntas e agendar o serviço de reparo ou manutenção que você precisa.
-
-Confie em nós para cuidar dos seus equipamentos eletrônicos e garantir que eles funcionem da melhor maneira possível. Aguardamos ansiosamente para servi-lo!</h5>
-
-      <p class="w3-text-grey">Acreditamos na entrega de um serviço de excelência e na construção de um relacionamento de confiança com nossos clientes. Utilizamos somente peças de reposição de qualidade e garantimos os serviços prestados, assegurando que seu equipamento funcione como novo após a manutenção.</p>
+      <div class="w3-third w3-center">
+        <i class="w3-padding-64 "> <img src="foto/servico.png" width="100%" alt=""></i>
+      </div>
     </div>
   </div>
-</div>
 
 
-</section>
 
-<!-- formatação -->
-<section class="sistemas" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
+
+  <!-- Second Grid -->
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <i class=""> <img src="foto/waht.png" width="100%" alt=""></i>
+      </div>
+
+      <div class="w3-twothird">
+
+        <h5 class="w3-padding-32">
+          Estamos aqui para ajudar! Ligue diretamente para nossa central de atendimento. Nossa equipe está pronta para
+          responder a todas as suas perguntas e agendar o serviço de reparo ou manutenção que você precisa.
+
+          Confie em nós para cuidar dos seus equipamentos eletrônicos e garantir que eles funcionem da melhor maneira
+          possível. Aguardamos ansiosamente para servi-lo!</h5>
+
+        <p class="w3-text-grey">Acreditamos na entrega de um serviço de excelência e na construção de um relacionamento
+          de confiança com nossos clientes. Utilizamos somente peças de reposição de qualidade e garantimos os serviços
+          prestados, assegurando que seu equipamento funcione como novo após a manutenção.</p>
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+
+  <!-- formatação -->
+  <section class="sistemas" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SISTEMAS OPERACIONAIS</h3>
+      </div>
+      <p class="w3-center">Todos os sistemas desta categoria agora estão no <strong>Catálogo de Downloads</strong>. Use
+        a busca ou os filtros para encontrar o arquivo desejado.</p>
+    </div>
+  </section>
+
+
+  <section class="office" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Pacote Office</h3>
+      </div>
+      <p class="w3-center">Todos os pacotes Office estão disponíveis no <strong>Catálogo de Downloads</strong>. Busque
+        por "Office" ou use os filtros.</p>
+    </div>
+  </section>
+
+  <section class="ativador" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Ativadores</h3>
+      </div>
+      <p class="w3-center">Ativadores e utilitários estão centralizados no <strong>Catálogo de Downloads</strong>.
+        Procure por "ativador" na busca.</p>
+    </div>
+  </section>
+
+  <section class="boot" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Criando BOOT no USB</h3>
+      </div>
+      <p class="w3-center">Ferramentas para criar pendrive bootável (Ventoy, Rufus etc.) estão no <strong>Catálogo de
+          Downloads</strong>. Utilize a busca para encontrar rapidamente.</p>
+    </div>
+  </section>
+
+
+  <section class="wifi" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">WIFI</h3>
+      </div>
+      <p class="w3-center">Drivers WiFi e adaptadores estão listados no <strong>Catálogo de Downloads</strong>. Procure
+        por "wifi" ou pelo modelo.</p>
+    </div>
+  </section>
+
+  <section class="resete_impressora" style="display:none;">
+    <div class="w3-content w3-padding" style="max-width:1200px">
+      <div class="w3-container w3-padding-32">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Reset de Impressora</h3>
+      </div>
+      <p class="w3-center">Ferramentas de reset para impressoras estão no <strong>Catálogo de Downloads</strong>. Busque
+        por "reset" ou pelo modelo da impressora.</p>
+    </div>
+  </section>
+  <div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Editor de Vídeo</h3>
+  </div>
+  <p class="w3-center">Editors de vídeo e ferramentas relacionadas estão no <strong>Catálogo de Downloads</strong>.
+    Procure por "Vegas" ou "Premiere".</p>
+  </div>
+  </section>
+
+
+  <section class="resete_impressora" style="display:none;">
+
+    <div class="w3-content" style="max-width:1564px">
+      <!-- Project Section -->
+
+      <div class="w3-container w3-padding-32" id="projects">
+        <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Impressoras</h1>
+      </div>
+
+      <div class="w3-row-padding w3-center">
+        <div class="w3-col l3 m6 w3-margin-bottom ">
+          <img src="foto/EPSON 3250.png" alt="John" class="" style="width:52%">
+          <h3>Impressora Epson Reset</h3>
+          <p> L3250</p>
+          <!-- link migrado para catálogo: Reset Epson L3250 -->
+
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom ">
+          <img src="foto/EPSON.png" alt="John" class="" style="width:50%">
+          <h3>Impressora Epson Reset</h3>
+          <p>L3150</p>
+          <!-- link migrado para catálogo: Reset Epson L3150 -->
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="suporte w3-container suporte" style="display:none;">
+
+
     <div class="w3-container w3-padding-32" id="projects">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SISTEMAS OPERACIONAIS</h3>
+      <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SUPORTE REMOTO</h1>
     </div>
-    <p class="w3-center">Todos os sistemas desta categoria agora estão no <strong>Catálogo de Downloads</strong>. Use a busca ou os filtros para encontrar o arquivo desejado.</p>
-  </div>
-</section>
 
 
-<section class="office" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Pacote Office</h3>
+    <div align="center">
+
+      <img src="foto/anydesk-logo_brandlogos.net_91sb7.png" width="50%" alt="">
+      <br>
+      <br>
+      <a class="w3-button w3-red w3-padding-16" href="https://anydesk.com/pt/downloads/thank-you?dv=win_exe"
+        target="_blank"> BAIXAR </a>
     </div>
-    <p class="w3-center">Todos os pacotes Office estão disponíveis no <strong>Catálogo de Downloads</strong>. Busque por "Office" ou use os filtros.</p>
-  </div>
-</section>
 
-<section class="ativador" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Ativadores</h3>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center ">
+
+
+    <div class="w3-botto">
+      <!-- Inicio codigo Contador -->
+      <div align="center"><a title="tabela fipe" href="https://www.tabelafipeweb.com.br"><img
+            src="https://contador-gratis.com/contadores-de-visitas/050625073940675.gif"></a>
+        <h2>Visitas</h2>
+      </div>
+      <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+
+
+      </div>
+      <!-- Fim do codigo Contador -->
     </div>
-    <p class="w3-center">Ativadores e utilitários estão centralizados no <strong>Catálogo de Downloads</strong>. Procure por "ativador" na busca.</p>
-  </div>
-</section>
 
-<section class="boot" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Criando BOOT no USB</h3>
-    </div>
-    <p class="w3-center">Ferramentas para criar pendrive bootável (Ventoy, Rufus etc.) estão no <strong>Catálogo de Downloads</strong>. Utilize a busca para encontrar rapidamente.</p>
-  </div>
-</section>
+    <p class="w3-opacity">copyright &copy; 2025 <a href="https://www.instagram.com/code_programado/"
+        target="_blank">code programado </a></p>
+  </footer>
 
-
-<section class="wifi" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">WIFI</h3>
-    </div>
-    <p class="w3-center">Drivers WiFi e adaptadores estão listados no <strong>Catálogo de Downloads</strong>. Procure por "wifi" ou pelo modelo.</p>
-  </div>
-</section>
-
-<section class="resete_impressora" style="display:none;">
-  <div class="w3-content w3-padding" style="max-width:1200px">
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Reset de Impressora</h3>
-    </div>
-    <p class="w3-center">Ferramentas de reset para impressoras estão no <strong>Catálogo de Downloads</strong>. Busque por "reset" ou pelo modelo da impressora.</p>
-  </div>
-</section>
-    <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Editor de Vídeo</h3>
-    </div>
-    <p class="w3-center">Editors de vídeo e ferramentas relacionadas estão no <strong>Catálogo de Downloads</strong>. Procure por "Vegas" ou "Premiere".</p>
-  </div>
-</section>
-
-
-<section class="resete_impressora" style="display:none;">
-
-  <div class="w3-content" style="max-width:1564px">
-  <!-- Project Section -->
-
-  <div class="w3-container w3-padding-32" id="projects">
-    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">Impressoras</h1>
-  </div>
-
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col l3 m6 w3-margin-bottom ">
-      <img src="foto/EPSON 3250.png" alt="John" class=""  style="width:52%">
-      <h3>Impressora Epson Reset</h3>
-      <p> L3250</p>
-      <!-- link migrado para catálogo: Reset Epson L3250 -->
-     
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom ">
-      <img src="foto/EPSON.png" alt="John" class=""  style="width:50%">
-      <h3>Impressora Epson Reset</h3>
-      <p>L3150</p>
-      <!-- link migrado para catálogo: Reset Epson L3150 -->
-    </div>
-   
-
-
-
-  </div>
-</div>
-</section>
-
-
-
-
-<section class="suporte w3-container suporte" style="display:none;">
-
- 
-  <div class="w3-container w3-padding-32" id="projects">
-    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16 w3-center">SUPORTE REMOTO</h1>
-  </div>
-
-
-  <div align="center">
-
-    <img src="foto/anydesk-logo_brandlogos.net_91sb7.png" width="50%" alt="">
-    <br>
-    <br>
-<a class="w3-button w3-red w3-padding-16" href="https://anydesk.com/pt/downloads/thank-you?dv=win_exe" target="_blank" > BAIXAR </a>
-  </div>
-
-</section>
-
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center ">  
-
-
- <div  class="w3-botto">
-  <!-- Inicio codigo Contador -->
-<div align="center" ><a title="tabela fipe" href="https://www.tabelafipeweb.com.br"><img src="https://contador-gratis.com/contadores-de-visitas/050625073940675.gif"></a>
-<h2>Visitas</h2>
-</div>
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-   
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-   
-    
- </div>
-<!-- Fim do codigo Contador -->
-</div>
-
- <p class="w3-opacity">copyright &copy; 2025 <a href="https://www.instagram.com/code_programado/" target="_blank">code programado </a></p>
-</footer>
-
-<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-
-function mostrar(params) {
-  var nome = params.innerHTML;
-
-
-  const inicio = document.querySelector('.inicio');
-  const sistemas = document.querySelector('.sistemas')
-  const office = document.querySelector('.office')
-  const boot =  document.querySelector('.boot')
-  const ativador = document.querySelector('.ativador')
-  const wifi = document.querySelector('.wifi')
-  const impressora = document.querySelector('.impressora')
-  const downloads = document.querySelector('.downloads')
-
-  const editor_de_foto = document.querySelector('.editor_de_foto')
-  const editor_de_video = document.querySelector('.editor_de_video')
-  const resete_impressora = document.querySelector('.resete_impressora')
-  const suporte = document.querySelector('.suporte')
-
-  inicio.style.display = "none";
-  sistemas.style.display = "none";
-  office.style.display = "none";
-  ativador.style.display = "none";
-  boot.style.display = "none";
-  downloads.style.display = "none";
-
-  wifi.style.display = "none";
-  impressora.style.display = "none";
-
-  editor_de_foto.style.display = "none";
-  editor_de_video.style.display = "none";
-
-  resete_impressora.style.display = "none";
-  suporte.style.display = "none";
-
-
-  if (nome === "Criar BOOT") {
-    boot.style.display = "block";
-  }
-
-  if (nome === "Baixar Sistema Operacional") {
-    sistemas.style.display = "block";
-  }
-
-  if (nome === "Baixar OFFICE") {
-    office.style.display = "block";
-  }
-  if (nome === "Ativadores") {
-    ativador.style.display = "block";
-  }
-  if (nome === "Impressoras") {
-    impressora.style.display = "block";
-  }
-  if (nome === "Wifi") {
-    wifi.style.display = "block";
-  }
-  if (nome === "Editor de Foto") {
-    editor_de_foto.style.display = "block";
-  }
-  if (nome === "Editor de video") {
-    editor_de_video.style.display = "block";
-  }
-  if (nome === "Impressora") {
-    resete_impressora.style.display = "block";
-  }
-  if (nome === "Suporte") {
-    suporte.style.display = "block";
-  }
-  if (nome === "Catálogo de Downloads") {
-    downloads.style.display = "block";
-    loadPrograms();
-  }
-}
-
-
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className =
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-
-function myAccFunc1() {
-  var x = document.getElementById("demoAcc1");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green1";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className =
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-
-function myAccFunc2() {
-  var x = document.getElementById("demoAcc2");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className =
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-
-function myAccFunc3() {
-  var x = document.getElementById("demoAcc3");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className =
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-  /* --- Novas funções para carregar e buscar programas --- */
-  let programsCache = null;
-
-  function loadPrograms() {
-    if (programsCache) { renderCategories(programsCache); renderCategorySections(programsCache); return; }
-    showLoader(true);
-    fetch('data/programs.json')
-      .then(function(res) { if (!res.ok) throw new Error('Network response not ok'); return res.json(); })
-      .then(function(data) {
-        programsCache = data;
-        renderCategories(data);
-        renderCategorySections(data);
-        showLoader(false);
-      })
-      .catch(function(err) {
-        console.warn('fetch failed, tentando fallback inline', err);
-        const s = document.getElementById('programs-data');
-        if (s && s.textContent.trim()) {
-          try {
-            const data = JSON.parse(s.textContent);
-            programsCache = data;
-            renderCategories(data);
-            renderCategorySections(data);
-            showLoader(false);
-            return;
-          } catch(e){}
-        }
-        showLoader(false);
-        console.error(err);
-        var cont = document.getElementById('downloads-sections'); if (cont) cont.innerHTML = '<p class="w3-text-red">Não foi possível carregar a lista de programas. Se estiver abrindo o arquivo localmente, rode um servidor (ex: python -m http.server).</p>';
-      });
-  }
-
-  function showLoader(show) { var l = document.getElementById('downloads-loader'); if (l) l.style.display = show ? 'block' : 'none'; }
-
-  function slugify(text){ return text.toString().toLowerCase().replace(/\s+/g,'-').replace(/[^\w\-]+/g,'').replace(/\-\-+/g,'-').replace(/^-+|-+$/g,''); }
-
-  function createCardHtml(p){
-    return '<div class="w3-card download-card" style="width:100%;">'
-      + (p.image ? ('<div style="position:relative"><img src="'+p.image+'" alt="'+p.title+'"><div class="category-badge">'+(p.category||'')+'</div></div>') : '')
-      + '<div class="w3-container"><h3>'+p.title+'</h3><p class="w3-text-grey">'+(p.description || '')+'</p>'
-      + '<p><a href="'+p.link+'" target="'+(p.target || '_blank')+'" class="btn-modern w3-block"><i class="fa fa-download"></i> Baixar</a></p>'
-      + '</div></div>';
-  }
-
-  function renderCategorySections(list){
-    const container = document.getElementById('downloads-sections');
-    if (!container) return;
-    container.innerHTML = '';
-    if (!list || list.length === 0) { container.innerHTML = '<p class="w3-text-grey">Nenhum resultado encontrado.</p>'; return; }
-    const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
-    cats.forEach(function(cat){
-      const items = list.filter(p => (p.category || 'Outros') === cat);
-      if (!items.length) return;
-      const section = document.createElement('div');
-      section.className = 'category-section';
-      section.id = 'cat-'+slugify(cat);
-      section.innerHTML = '<h4>'+cat+'</h4><div class="category-grid"></div>';
-      const grid = section.querySelector('.category-grid');
-      items.forEach(function(p){
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = createCardHtml(p);
-        grid.appendChild(wrapper);
-      });
-      container.appendChild(section);
-    });
-    showLoader(false);
-  }
-
-  function renderCategories(list){
-    const container = document.getElementById('downloads-categories-list');
-    if (!container) return;
-    const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
-    container.innerHTML = '';
-    // All button with total count
-    const allBtn = document.createElement('button');
-    allBtn.className = 'category-pill';
-    allBtn.innerHTML = 'Todos <span class="count">('+ (list ? list.length : 0) +')</span>';
-    allBtn.dataset.cat = '';
-    allBtn.onclick = function(){ setActiveCategory(''); renderCategorySections(programsCache); };
-    container.appendChild(allBtn);
-    cats.forEach(function(cat){
-      const cnt = (list || []).filter(p => (p.category || 'Outros') === cat).length;
-      const btn = document.createElement('button');
-      btn.className = 'category-pill';
-      btn.innerHTML = cat + ' <span class="count">('+cnt+')</span>';
-      btn.dataset.cat = cat;
-      btn.onclick = function(){ setActiveCategory(cat); filterByCategory(cat); };
-      container.appendChild(btn);
-    });
-  }
-
-  function filterByCategory(cat){
-    if (!programsCache) return;
-    const filtered = programsCache.filter(p => (p.category || 'Outros') === cat);
-    renderCategorySections(filtered);
-    setTimeout(function(){ scrollToCategory(cat); }, 120);
-  }
-
-  function setActiveCategory(cat){
-    const container = document.getElementById('downloads-categories-list');
-    if (!container) return;
-    Array.from(container.querySelectorAll('button')).forEach(function(b){
-      const bcat = b.dataset.cat || '';
-      if ((cat || '') === (bcat || '')) b.classList.add('active'); else b.classList.remove('active');
-    });
-  }
-
-  function scrollToCategory(cat){
-    const el = document.getElementById('cat-'+slugify(cat));
-    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function filterPrograms(q){
-    if (!programsCache) return;
-    q = (q || '').trim().toLowerCase();
-    if (!q) renderCategorySections(programsCache);
-    else {
-      const filtered = programsCache.filter(p => (p.title + ' ' + (p.description||'') + ' ' + (p.category||'')).toLowerCase().indexOf(q) !== -1);
-      renderCategorySections(filtered);
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
     }
-  }
-</script>
+
+
+    function mostrar(params) {
+      var nome = params.innerHTML;
+
+
+      const inicio = document.querySelector('.inicio');
+      const sistemas = document.querySelector('.sistemas')
+      const office = document.querySelector('.office')
+      const boot = document.querySelector('.boot')
+      const ativador = document.querySelector('.ativador')
+      const wifi = document.querySelector('.wifi')
+      const impressora = document.querySelector('.impressora')
+      const downloads = document.querySelector('.downloads')
+
+      const editor_de_foto = document.querySelector('.editor_de_foto')
+      const editor_de_video = document.querySelector('.editor_de_video')
+      const resete_impressora = document.querySelector('.resete_impressora')
+      const suporte = document.querySelector('.suporte')
+
+      inicio.style.display = "none";
+      sistemas.style.display = "none";
+      office.style.display = "none";
+      ativador.style.display = "none";
+      boot.style.display = "none";
+      downloads.style.display = "none";
+
+      wifi.style.display = "none";
+      impressora.style.display = "none";
+
+      editor_de_foto.style.display = "none";
+      editor_de_video.style.display = "none";
+
+      resete_impressora.style.display = "none";
+      suporte.style.display = "none";
+
+
+      if (nome === "Criar BOOT") {
+        boot.style.display = "block";
+      }
+
+      if (nome === "Baixar Sistema Operacional") {
+        sistemas.style.display = "block";
+      }
+
+      if (nome === "Baixar OFFICE") {
+        office.style.display = "block";
+      }
+      if (nome === "Ativadores") {
+        ativador.style.display = "block";
+      }
+      if (nome === "Impressoras") {
+        impressora.style.display = "block";
+      }
+      if (nome === "Wifi") {
+        wifi.style.display = "block";
+      }
+      if (nome === "Editor de Foto") {
+        editor_de_foto.style.display = "block";
+      }
+      if (nome === "Editor de video") {
+        editor_de_video.style.display = "block";
+      }
+      if (nome === "Impressora") {
+        resete_impressora.style.display = "block";
+      }
+      if (nome === "Suporte") {
+        suporte.style.display = "block";
+      }
+      if (nome === "Catálogo de Downloads") {
+        downloads.style.display = "block";
+        loadPrograms();
+      }
+    }
+
+
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-green", "");
+      }
+    }
+
+    function myAccFunc1() {
+      var x = document.getElementById("demoAcc1");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green1";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-green", "");
+      }
+    }
+
+    function myAccFunc2() {
+      var x = document.getElementById("demoAcc2");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-green", "");
+      }
+    }
+
+    function myAccFunc3() {
+      var x = document.getElementById("demoAcc3");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+          x.previousElementSibling.className.replace(" w3-green", "");
+      }
+    }
+    /* --- Novas funções para carregar e buscar programas --- */
+    let programsCache = null;
+
+    function loadPrograms() {
+      if (programsCache) { renderCategories(programsCache); renderCategorySections(programsCache); return; }
+      showLoader(true);
+      fetch('data/programs.json')
+        .then(function (res) { if (!res.ok) throw new Error('Network response not ok'); return res.json(); })
+        .then(function (data) {
+          programsCache = data;
+          renderCategories(data);
+          renderCategorySections(data);
+          showLoader(false);
+        })
+        .catch(function (err) {
+          console.warn('fetch failed, tentando fallback inline', err);
+          const s = document.getElementById('programs-data');
+          if (s && s.textContent.trim()) {
+            try {
+              const data = JSON.parse(s.textContent);
+              programsCache = data;
+              renderCategories(data);
+              renderCategorySections(data);
+              showLoader(false);
+              return;
+            } catch (e) { }
+          }
+          showLoader(false);
+          console.error(err);
+          var cont = document.getElementById('downloads-sections'); if (cont) cont.innerHTML = '<p class="w3-text-red">Não foi possível carregar a lista de programas. Se estiver abrindo o arquivo localmente, rode um servidor (ex: python -m http.server).</p>';
+        });
+    }
+
+    function showLoader(show) { var l = document.getElementById('downloads-loader'); if (l) l.style.display = show ? 'block' : 'none'; }
+
+    function slugify(text) { return text.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+|-+$/g, ''); }
+
+    function createCardHtml(p) {
+      return '<div class="w3-card download-card" style="width:100%;">'
+        + (p.image ? ('<div style="position:relative"><img src="' + p.image + '" alt="' + p.title + '"><div class="category-badge">' + (p.category || '') + '</div></div>') : '')
+        + '<div class="w3-container"><h3>' + p.title + '</h3><p class="w3-text-grey">' + (p.description || '') + '</p>'
+        + '<p><a href="' + p.link + '" target="' + (p.target || '_blank') + '" class="btn-modern w3-block"><i class="fa fa-download"></i> Baixar</a></p>'
+        + '</div></div>';
+    }
+
+    function renderCategorySections(list) {
+      const container = document.getElementById('downloads-sections');
+      if (!container) return;
+      container.innerHTML = '';
+      if (!list || list.length === 0) { container.innerHTML = '<p class="w3-text-grey">Nenhum resultado encontrado.</p>'; return; }
+      const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
+      cats.forEach(function (cat) {
+        const items = list.filter(p => (p.category || 'Outros') === cat);
+        if (!items.length) return;
+        const section = document.createElement('div');
+        section.className = 'category-section';
+        section.id = 'cat-' + slugify(cat);
+        section.innerHTML = '<h4>' + cat + '</h4><div class="category-grid"></div>';
+        const grid = section.querySelector('.category-grid');
+        items.forEach(function (p) {
+          const wrapper = document.createElement('div');
+          wrapper.innerHTML = createCardHtml(p);
+          grid.appendChild(wrapper);
+        });
+        container.appendChild(section);
+      });
+      showLoader(false);
+    }
+
+    function renderCategories(list) {
+      const container = document.getElementById('downloads-categories-list');
+      if (!container) return;
+      const cats = Array.from(new Set(list.map(p => p.category || 'Outros')));
+      container.innerHTML = '';
+      // All button with total count
+      const allBtn = document.createElement('button');
+      allBtn.className = 'category-pill';
+      allBtn.innerHTML = 'Todos <span class="count">(' + (list ? list.length : 0) + ')</span>';
+      allBtn.dataset.cat = '';
+      allBtn.onclick = function () { setActiveCategory(''); renderCategorySections(programsCache); };
+      container.appendChild(allBtn);
+      cats.forEach(function (cat) {
+        const cnt = (list || []).filter(p => (p.category || 'Outros') === cat).length;
+        const btn = document.createElement('button');
+        btn.className = 'category-pill';
+        btn.innerHTML = cat + ' <span class="count">(' + cnt + ')</span>';
+        btn.dataset.cat = cat;
+        btn.onclick = function () { setActiveCategory(cat); filterByCategory(cat); };
+        container.appendChild(btn);
+      });
+    }
+
+    function filterByCategory(cat) {
+      if (!programsCache) return;
+      const filtered = programsCache.filter(p => (p.category || 'Outros') === cat);
+      renderCategorySections(filtered);
+      setTimeout(function () { scrollToCategory(cat); }, 120);
+    }
+
+    function setActiveCategory(cat) {
+      const container = document.getElementById('downloads-categories-list');
+      if (!container) return;
+      Array.from(container.querySelectorAll('button')).forEach(function (b) {
+        const bcat = b.dataset.cat || '';
+        if ((cat || '') === (bcat || '')) b.classList.add('active'); else b.classList.remove('active');
+      });
+    }
+
+    function scrollToCategory(cat) {
+      const el = document.getElementById('cat-' + slugify(cat));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function filterPrograms(q) {
+      if (!programsCache) return;
+      q = (q || '').trim().toLowerCase();
+      if (!q) renderCategorySections(programsCache);
+      else {
+        const filtered = programsCache.filter(p => (p.title + ' ' + (p.description || '') + ' ' + (p.category || '')).toLowerCase().indexOf(q) !== -1);
+        renderCategorySections(filtered);
+      }
+    }
+  </script>
 
 </body>
-</html>
 
+</html>
