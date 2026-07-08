@@ -16,6 +16,14 @@
     "image": "foto/blue-wallpaper_windows_10_hd_2880x1800.png"
   },
   {
+    "id": "w10lite",
+    "title": "Windows 10 lite",
+    "description": "ISO do Windows 10 leve para pc fraco",
+    "category": "Sistemas Operacionais",
+    "link": "https://www.mediafire.com/file/f4awnlqs0nud1yp/Windows10_lite.iso/file",
+    "image": "foto/windows10lite.jpg"
+  },
+  {
     "id": "w8",
     "title": "Windows 8.1",
     "description": "ISO do Windows 8.1",
