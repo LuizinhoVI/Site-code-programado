@@ -2,9 +2,8 @@
   "courses": [
     {
       "title": "Informática Básica",
-      "description": "Exemplo de curso para aprender a usar o computador, navegar na internet e trabalhar com arquivos. Ajuste as informações antes de divulgar.",
-      "price": "R$ 250,00 ",
-      "duration": "40 horas ",
+      "price": "R$ 40,00 ",
+      "duration": "60 horas ",
       "topics": [
         "Conhecendo o computador",
         "Digitação e editor de texto",
@@ -15,17 +14,106 @@
       "active": true
     },
     {
-      "title": "Informática Básica (Exemplo)",
-      "description": "Exemplo de curso para aprender a usar o computador, navegar na internet e trabalhar com arquivos. Ajuste as informações antes de divulgar.",
-      "price": "R$ 250,00 (exemplo)",
-      "duration": "20 horas (exemplo)",
+      "title": "Informática Avançáda",
+      "price": "R$ 50,00",
+      "duration": "60 horas",
       "topics": [
-        "Conhecendo o computador e seus componentes",
-        "Uso do teclado e do mouse",
-        "Windows: área de trabalho, janelas e configurações básicas",
-        "Arquivos e pastas: criar, organizar e localizar",
+        "Word avançado",
+        "Excel/Calc",
+        "PowerPoint/Impress",
+        "Internet e produtividade",
         "Internet: navegação, pesquisas e cuidados básicos",
         "E-mail: enviar mensagens e anexos"
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+    {
+      "title": "Operador de Computador",
+      "price": "R$ 60,00",
+      "duration": "60 horas",
+      "topics": [
+        "Revisão e digitação profissional",
+        "Pacote Office completo",
+        "Internet e ferramentas online",
+        "Segurança e rotinas de trabalho",
+        "Projeto final"
+       
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+    {
+      "title": "Robótica",
+      "price": "R$ 60,00",
+      "duration": "56 horas",
+      "topics": [
+        "Eletrônica básica",
+        "Introdução ao Arduino",
+        "Sensores e atuadores",
+        "Programação do robô",
+        "Projeto final"
+       
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+     {
+      "title": "Suporte e Manutenção de Computadores",
+      "price": "R$ 80,00",
+      "duration": "140 horas",
+      "topics": [
+        "Hardware",
+        "Sistema operacional",
+        "Redes",
+        "Manutenção e suporte",
+        "Projeto final"
+       
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+     {
+      "title": "Programação Web",
+      "price": "R$ 60,00",
+      "duration": "120 horas",
+      "topics": [
+        "HTML — estrutura",
+        "CSS — aparência",
+        "JavaScript — interatividade",
+        "Publicação e ferramentas",
+        "Projeto final"
+       
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+     {
+      "title": "Programação para Crianças",
+      "price": "R$ 60,00",
+      "duration": "56 horas",
+      "topics": [
+        "Pensamento computacional",
+        "Introdução ao Scratch",
+        "Lógica no Scratch",
+        "Criando jogos",
+        "Projeto final"
+       
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+     {
+      "title": "Programação para Adultos",
+      "price": "R$ 60,00",
+      "duration": "140 horas",
+      "topics": [
+        "Lógica de programação",
+        "Python — fundamentos",
+        "Estruturas de controle",
+        "Projetos práticos",
+        "Projeto final"
+       
       ],
       "buttonText": "Tenho interesse",
       "active": true
