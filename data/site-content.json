@@ -1,0 +1,43 @@
+{
+  "courses": [
+    {
+      "title": "Informática Básica",
+      "description": "Exemplo de curso para aprender a usar o computador, navegar na internet e trabalhar com arquivos. Ajuste as informações antes de divulgar.",
+      "price": "R$ 250,00 ",
+      "duration": "40 horas ",
+      "topics": [
+        "Conhecendo o computador",
+        "Digitação e editor de texto",
+        "Arquivos e pastas",
+        "Internet e comunicação"
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    },
+    {
+      "title": "Informática Básica (Exemplo)",
+      "description": "Exemplo de curso para aprender a usar o computador, navegar na internet e trabalhar com arquivos. Ajuste as informações antes de divulgar.",
+      "price": "R$ 250,00 (exemplo)",
+      "duration": "20 horas (exemplo)",
+      "topics": [
+        "Conhecendo o computador e seus componentes",
+        "Uso do teclado e do mouse",
+        "Windows: área de trabalho, janelas e configurações básicas",
+        "Arquivos e pastas: criar, organizar e localizar",
+        "Internet: navegação, pesquisas e cuidados básicos",
+        "E-mail: enviar mensagens e anexos"
+      ],
+      "buttonText": "Tenho interesse",
+      "active": true
+    }
+  ],
+  
+  "promotions": [
+    {
+      "title": "Promoção de lançamento (Exemplo)",
+      "description": "Exemplo de divulgação promocional. Substitua pela sua oferta real, incluindo condições e prazo, antes de publicar.",
+      "buttonText": "Consultar promoção",
+      "active": true
+    }
+  ]
+}
