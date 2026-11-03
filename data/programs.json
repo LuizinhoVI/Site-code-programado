@@ -40,6 +40,22 @@
     "image": "foto/windows_7_gerbo.jpg"
   },
   {
+    "id": "w10",
+    "title": "Windows 10 SNYX",
+    "description": "ISO do Windows 10 SNYX",
+    "category": "Sistemas Operacionais",
+    "link": "https://www.mediafire.com/file/w7eibm72apgajpy/SnyX-OS-10-22H2.iso/file",
+    "image": "foto/SnyXV2.png"
+  },
+  {
+    "id": "w11",
+    "title": "Windows 11 SNYX",
+    "description": "ISO do Windows 11 SNYX",
+    "category": "Sistemas Operacionais",
+    "link": "https://www.mediafire.com/file/e7a6e6x41ygo6n5/SnyXOS11-23H2-V1.1.0.iso/file",
+    "image": "foto/SnyXV2.png"
+  },
+  {
     "id": "office2016",
     "title": "Office 2016",
     "description": "Pacote Office 2016",
