@@ -87,37 +87,9 @@
       ],
       "buttonText": "Tenho interesse",
       "active": true
-    },
-     {
-      "title": "Programação para Crianças",
-      "price": "R$ 60,00",
-      "duration": "56 horas",
-      "topics": [
-        "Pensamento computacional",
-        "Introdução ao Scratch",
-        "Lógica no Scratch",
-        "Criando jogos",
-        "Projeto final"
-       
-      ],
-      "buttonText": "Tenho interesse",
-      "active": true
-    },
-     {
-      "title": "Programação para Adultos",
-      "price": "R$ 60,00",
-      "duration": "140 horas",
-      "topics": [
-        "Lógica de programação",
-        "Python — fundamentos",
-        "Estruturas de controle",
-        "Projetos práticos",
-        "Projeto final"
-       
-      ],
-      "buttonText": "Tenho interesse",
-      "active": true
     }
+    
+
   ],
   
   "promotions": [
